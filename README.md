@@ -39,8 +39,4 @@ It will only show the email, joiningDate and role column from the tableData. And
 
 I am acknowledge the hard work and contribution of the following third party libraries and framework. <br> I used and take inspiration from the following third party libraries/framework.
 
-**2. [TailwindCSS](https://tailwindcss.com/) - CSS Framework**
-
-```
-
-```
+**1. [TailwindCSS](https://tailwindcss.com/) - CSS Framework**
