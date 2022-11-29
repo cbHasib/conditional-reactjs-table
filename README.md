@@ -29,8 +29,9 @@ It will only show the email, joiningDate and role column from the tableData. And
 ```
  * The table component is used to display data in a table format
  * @param {Array} data - Array of objects to be displayed in the table
- * @param {Array} column - List of column that you wanted to show
- * @param {Array} sort - List of sort that you wanted to show
+ * @param {Object} tableConfig - Array of objects to control column & sort behavior
+ * @param {Array} tableConfig.column - List of column that you wanted to show
+ * @param {Array} tableConfig.sort - List of sort that you wanted to show
 ```
 
   <br>
