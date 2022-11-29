@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Table from "./Components/Table/Table";
 
 function App() {
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    fetch("tableTestData.json")
+      .then((response) => response.json())
+      .then((json) => setTableData(json));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table
+        data={tableData}
+        column={["name", "city", "email", "joiningDate", "role"]}
+        sort={["name", "city", "email", "joiningDate", "role"]}
+      />
+
+      <Table
+        data={tableData}
+        column={["name", "email", "role"]}
+        sort={["name"]}
+      />
+
+      <Table
+        data={tableData}
+        column={["email", "joiningDate", "role"]}
+        sort={["joiningDate", "role"]}
+      />
+
+      <Table
+        data={tableData}
+        column={["name", "city", "joiningDate", "role"]}
+        sort={["city", "role"]}
+      />
     </div>
   );
 }

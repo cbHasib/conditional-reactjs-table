@@ -1,0 +1,27 @@
+table,
+th,
+td {
+    border: 1px solid #E1E1E1;
+}
+
+th,
+td {
+    padding: 8px 10px;
+}
+
+td img {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #747474;
+    border-radius: 9999px;
+    object-fit: cover;
+}
+
+td a {
+    color: #0071CC;
+    text-decoration: underline;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
