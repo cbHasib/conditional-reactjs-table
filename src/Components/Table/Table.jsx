@@ -5,12 +5,20 @@ import sortIcon from "../../assets/icon/sortIcon.svg";
 /*
  * This table component is used to display data in a table format
  * @param {Array} data - Array of objects to be displayed in the table
- * @param {Array} column - List of column that you wanted to show
- * @param {Array} sort - List of sort that you wanted to show
+ * @param {Object} tableConfig - Array of objects to control column & sort behavior
+ * @param {Array} tableConfig.column - List of column that you wanted to show
+ * @param {Array} tableConfig.sort - List of sort that you wanted to show
  *
  * @example
- * <Table data={data} column={'column1', 'column2'} sort={'column1'} />
- * It will show only the column1 and column2 and sort the column1
+ * <Table
+        data={tableData}
+        tableConfig={{
+          column: ["email", "joiningDate", "role"],
+          sort: ["joiningDate", "role"],
+        }}
+      />
+ * It will show only the email, joiningDate & role column in the table
+* It will show the sort icon for joiningDate & role column
  *
  * Coded by Md. Hasibul Hasan
  * Date: 29-Nov-2022
@@ -20,13 +28,17 @@ import sortIcon from "../../assets/icon/sortIcon.svg";
  *
  */
 
-const Table = ({ data, column, sort }) => {
+const Table = ({ data, tableConfig }) => {
   const [sortData, setSortData] = useState([]);
   const [sortNameAsc, setSortNameAsc] = useState(true);
   const [sortDateAsc, setSortDateAsc] = useState(true);
   const [sortCityAsc, setSortCityAsc] = useState(true);
   const [sortEmailAsc, setSortEmailAsc] = useState(true);
   const [sortRoleAsc, setSortRoleAsc] = useState(true);
+
+  const sort = tableConfig?.sort;
+  const column = tableConfig?.column;
+
   useEffect(() => {
     setSortData(data);
   }, [data]);

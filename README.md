@@ -14,7 +14,13 @@ Mainly I have used these as my coding: \
 ## **`Example`**
 
 ```
- <Table data={tableData} column={["email", "joiningDate", "role"]} sort={["joiningDate", "role"]} />
+  <Table
+        data={tableData}
+        tableConfig={{
+          column: ["email", "joiningDate", "role"],
+          sort: ["joiningDate", "role"],
+        }}
+      />
 ```
 
 It will only show the email, joiningDate and role column from the tableData. And also it will sort the table by joiningDate and role.\
